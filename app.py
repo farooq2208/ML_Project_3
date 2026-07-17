@@ -16,7 +16,7 @@ import streamlit as st
 # ── Page configuration ───────────────────────────────────────────────────────
 st.set_page_config(
     page_title="California House Price Predictor",
-    page_icon="🏠",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -47,7 +47,7 @@ def load_model():
         return joblib.load(MODEL_PATH)
     except FileNotFoundError:
         st.error(
-            f"❌ Model file `{MODEL_PATH}` not found. "
+            f" Model file `{MODEL_PATH}` not found. "
             "Make sure it lives in the same directory as `app.py`."
         )
         st.stop()
@@ -120,10 +120,10 @@ def render_sidebar():
             ### Price Bands
             | Band | Range |
             |------|-------|
-            | 🟢 Budget-friendly | < $150 000 |
-            | 🔵 Mid-range | $150 000 – $300 000 |
-            | 🟣 Premium | $300 000 – $450 000 |
-            | 🔴 Luxury | > $450 000 |
+            |  Budget-friendly | < $150 000 |
+            |  Mid-range | $150 000 – $300 000 |
+            |  Premium | $300 000 – $450 000 |
+            |  Luxury | > $450 000 |
 
             ### Disclaimer
             > Predictions are **estimates only** and should not be used
@@ -146,7 +146,7 @@ def render_sidebar():
         )
 
         st.markdown("---")
-        st.caption("Built with [Streamlit](https://streamlit.io) 🎈")
+        st.caption("Built with [Streamlit](https://streamlit.io) ")
 
 
 # ── Input validation ──────────────────────────────────────────────────────────
@@ -182,14 +182,14 @@ def validate_inputs(
 def render_input_form() -> dict:
     """Render the user-input form and return all raw values."""
 
-    st.header("📋 Enter Housing Block Details")
+    st.header(" Enter Housing Block Details")
     st.markdown(
         "All values refer to a **census block group** — a small geographic "
         "area containing roughly 600–3 000 people."
     )
 
     # ── Row 1: Location ───────────────────────────────────────────────────────
-    st.subheader("📍 Location")
+    st.subheader(" Location")
     loc_col1, loc_col2, loc_col3 = st.columns(3)
 
     with loc_col1:
@@ -235,7 +235,7 @@ def render_input_form() -> dict:
         )
 
     # ── Row 2: Housing characteristics ───────────────────────────────────────
-    st.subheader("🏘️ Housing Characteristics")
+    st.subheader("️ Housing Characteristics")
     house_col1, house_col2, house_col3 = st.columns(3)
 
     with house_col1:
@@ -275,7 +275,7 @@ def render_input_form() -> dict:
         )
 
     # ── Row 3: Population & income ────────────────────────────────────────────
-    st.subheader("👥 Population & Income")
+    st.subheader(" Population & Income")
     pop_col1, pop_col2, pop_col3 = st.columns(3)
 
     with pop_col1:
@@ -316,7 +316,7 @@ def render_input_form() -> dict:
         )
 
     # ── Derived features preview ──────────────────────────────────────────────
-    with st.expander("🔧 Preview derived features (auto-calculated)", expanded=False):
+    with st.expander(" Preview derived features (auto-calculated)", expanded=False):
         st.caption(
             "These three features are automatically computed from your inputs "
             "before being passed to the model — exactly as done during training."
@@ -391,7 +391,7 @@ def render_result(predicted_price: float, inputs: dict):
 
     # ── Key metrics ───────────────────────────────────────────────────────────
     with res_col1:
-        st.subheader("📊 Prediction Breakdown")
+        st.subheader(" Prediction Breakdown")
 
         st.metric("Predicted Median Value",    f"${predicted_price:,.0f}")
         st.metric("Model Typical Error (MAE)", "± $26,500",
@@ -403,13 +403,13 @@ def render_result(predicted_price: float, inputs: dict):
         lower = max(0, predicted_price - 26_500)
         upper = predicted_price + 26_500
         st.info(
-            f"📐 **Approximate range:** ${lower:,.0f} – ${upper:,.0f}  \n"
+            f" **Approximate range:** ${lower:,.0f} – ${upper:,.0f}  \n"
             f"*(±1 × MAE around the point estimate)*"
         )
 
     # ── Context & interpretation ──────────────────────────────────────────────
     with res_col2:
-        st.subheader("📍 Location Context")
+        st.subheader(" Location Context")
 
         # Derived ratios
         safe_hh    = max(inputs["households"], 1)
@@ -433,7 +433,7 @@ def render_result(predicted_price: float, inputs: dict):
         )
 
     # ── Input summary ─────────────────────────────────────────────────────────
-    with st.expander("🔍 Review your submitted inputs"):
+    with st.expander(" Review your submitted inputs"):
         display = {
             "Longitude":           inputs["longitude"],
             "Latitude":            inputs["latitude"],
@@ -465,7 +465,7 @@ def main():
             margin-bottom: 28px;
         ">
             <h1 style="color:white; margin:0 0 8px 0; font-size:2.3rem;">
-                🏠 California House Price Predictor
+                 California House Price Predictor
             </h1>
             <p style="color:#c8e6c9; font-size:1.05rem; margin:0;">
                 Enter details about a California census block group and our
@@ -486,7 +486,7 @@ def main():
     btn_col, _ = st.columns([1, 3])
     with btn_col:
         predict_clicked = st.button(
-            "🔍 Predict House Price",
+            " Predict House Price",
             type="primary",
             use_container_width=True,
         )
@@ -503,7 +503,7 @@ def main():
 
         if errors:
             for err in errors:
-                st.error(f"⚠️ {err}")
+                st.error(f"️ {err}")
         else:
             # Build model-ready DataFrame (feature engineering applied here)
             input_df = engineer_features(
