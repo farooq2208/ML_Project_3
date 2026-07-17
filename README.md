@@ -1,4 +1,4 @@
-# 🏠 California House Price Predictor
+# California House Price Predictor
 
 An AI-powered web application that estimates the **median house value** for a
 California census block group using an XGBoost regression model trained on
@@ -6,7 +6,7 @@ the classic California Housing dataset.
 
 ---
 
-## 📖 Project Description
+## Project Description
 
 Housing prices in California are driven by a complex mix of location,
 demographics, income, and proximity to amenities. This project builds an
@@ -16,7 +16,7 @@ instantly receive an estimated property value.
 
 ---
 
-## 🤖 About the Machine-Learning Model
+## About the Machine-Learning Model
 
 | Property | Detail |
 |---|---|
@@ -38,31 +38,31 @@ training notebook.
 
 ---
 
-## ✨ Application Features
+## Application Features
 
-- 📍 **Location inputs** — longitude, latitude, and ocean proximity with
+- **Location inputs** — longitude, latitude, and ocean proximity with
   California-range validation.
-- 🏘️ **Housing details** — median house age, total rooms, and total bedrooms
+- **Housing details** — median house age, total rooms, and total bedrooms
   with sensible defaults derived from dataset medians.
-- 👥 **Population & income** — population, households, and median income sliders.
-- 🔧 **Derived features preview** — expandable panel showing the three
+- **Population & income** — population, households, and median income sliders.
+- **Derived features preview** — expandable panel showing the three
   engineered ratios calculated from your inputs in real time.
-- 💰 **Colour-coded prediction card** — four price bands (Budget / Mid-range /
+- **Colour-coded prediction card** — four price bands (Budget / Mid-range /
   Premium / Luxury) with distinct visual styling.
-- 📊 **Model metrics panel** — displays MAE and R² alongside the prediction,
+- **Model metrics panel** — displays MAE and R² alongside the prediction,
   plus an approximate ±1 MAE confidence interval.
-- 📍 **Context table** — compares your block's key ratios against California
+- **Context table** — compares your block's key ratios against California
   dataset medians.
-- ✅ **Input validation** — catches impossible values (bedrooms > rooms,
+- **Input validation** — catches impossible values (bedrooms > rooms,
   households > population, out-of-California coordinates).
-- 🔍 **Input summary expander** — review every submitted value alongside the
+- **Input summary expander** — review every submitted value alongside the
   result.
-- 🚀 **Production-ready** — cached model loading, explicit dtype handling to
+- **Production-ready** — cached model loading, explicit dtype handling to
   prevent sklearn/pandas compatibility issues, and clean error messaging.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 california-house-price-predictor/
@@ -81,7 +81,7 @@ california-house-price-predictor/
 
 ---
 
-## ⚙️ Installation & Local Setup
+## Installation & Local Setup
 
 ### Prerequisites
 
@@ -132,7 +132,7 @@ Streamlit will automatically open `http://localhost:8501` in your browser.
 
 ---
 
-## 🖱️ How to Use the Application
+## How to Use the Application
 
 1. **Enter coordinates** — type or adjust the longitude and latitude for the
    California location you want to evaluate.
@@ -154,7 +154,7 @@ Streamlit will automatically open `http://localhost:8501` in your browser.
 
 ---
 
-## ⚠️ Assumptions & Limitations
+## Assumptions & Limitations
 
 | Item | Detail |
 |---|---|
@@ -167,7 +167,7 @@ Streamlit will automatically open `http://localhost:8501` in your browser.
 
 ---
 
-## 🛠️ Technologies & Libraries
+## Technologies & Libraries
 
 | Library | Version | Purpose |
 |---|---|---|
@@ -181,16 +181,13 @@ Streamlit will automatically open `http://localhost:8501` in your browser.
 
 ---
 
-## 🌐 Live Demo
+## Live Demo
 
-**Live Demo: https://your-streamlit-app-url.streamlit.app**
-
-> Replace the URL above after deploying to
-> [Streamlit Community Cloud](https://streamlit.io/cloud).
+**Live Demo: https://house-price-predictor2208.streamlit.app/**
 
 ---
 
-## 🚀 Deploying to Streamlit Community Cloud
+## Deploying to Streamlit Community Cloud
 
 1. Push your project folder to a **public GitHub repository** containing:
    - `app.py`
@@ -204,4 +201,4 @@ Streamlit will automatically open `http://localhost:8501` in your browser.
 
 ---
 
-*Made with ❤️ using Streamlit and XGBoost.*
+*Developed by: Farooq Hassnain Sheikh*
