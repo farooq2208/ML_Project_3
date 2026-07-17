@@ -117,8 +117,8 @@ def render_sidebar():
             | Band | Range |
             |------|-------|
             |  Budget-friendly | < $150000 |
-            |  Mid-range | $150000 – $300000 |
-            |  Premium | $300000 – $450000 |
+            |  Mid-range | $ 150000 – $ 300000 |
+            |  Premium | $ 300000 – $ 450000 |
             |  Luxury | > $450000 | 
             """ )
         st.markdown("---")
