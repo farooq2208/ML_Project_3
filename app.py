@@ -100,7 +100,6 @@ def get_price_band(price: float) -> dict:
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 def render_sidebar():
     with st.sidebar:
-        st.image("https://img.icons8.com/fluency/96/cottage.png", width=80)
         st.title("California House Price Predictor")
         st.markdown("---")
 
@@ -109,22 +108,23 @@ def render_sidebar():
             ### About
             This app uses an **XGBoost** regression model trained on
             California census housing data to estimate the **median house
-            value** for a given block group.
+            value** for a given block group. """ )
+        st.markdown("---")
 
-            ### How to use
-            1. Enter location coordinates or drag the map pin.
-            2. Fill in the housing and population details.
-            3. Select the proximity to the ocean.
-            4. Click **Predict House Price**.
-
+        st.markdown(
+            """
             ### Price Bands
             | Band | Range |
             |------|-------|
-            |  Budget-friendly | < $150 000 |
-            |  Mid-range | $150 000 – $300 000 |
-            |  Premium | $300 000 – $450 000 |
-            |  Luxury | > $450 000 |
+            |  Budget-friendly | < $150000 |
+            |  Mid-range | $150000 – $300000 |
+            |  Premium | $300000 – $450000 |
+            |  Luxury | > $450000 | 
+            """ )
+        st.markdown("---")
 
+        st.markdown(
+            """
             ### Disclaimer
             > Predictions are **estimates only** and should not be used
             > for financial or real-estate decisions without consulting
@@ -141,12 +141,12 @@ def render_sidebar():
             - **Metric:** R² Score
             - **Test R²:** ~0.83
             - **Test MAE:** ~$26 500
-            - **Dataset:** 20 640 California block groups
+            - **Dataset:** 20640 California block groups
             """
         )
 
         st.markdown("---")
-        st.caption("Built with [Streamlit](https://streamlit.io) ")
+        st.caption("Developed by: Farooq Hassnain Sheikh")
 
 
 # ── Input validation ──────────────────────────────────────────────────────────
