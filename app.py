@@ -185,7 +185,7 @@ def render_input_form() -> dict:
     st.header(" Enter Housing Block Details")
     st.markdown(
         "All values refer to a **census block group** — a small geographic "
-        "area containing roughly 600–3 000 people."
+        "area containing roughly 600–3000 people."
     )
 
     # ── Row 1: Location ───────────────────────────────────────────────────────
